@@ -67,7 +67,7 @@
     </div>
   </div>
 
-    {% for i in product|slice:"1:" %}
+    {% for i in product[1:] %}
     <div class="col-xs-3 col-sm-3 col-md-3">
         <div class="card" style="width: 18rem;">
         <img src='{% static "shop/test.jpg" %}' class="card-img-top" alt="...">
