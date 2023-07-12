@@ -32,8 +32,8 @@
 
           .carousel-control-prev,
           .carousel-control-next{
-          top: auto;
-bottom: auto;
+          top: 0;
+          bottom: 0;
           }
            body .no-padding{
            padding-left: 0,
@@ -42,7 +42,6 @@ bottom: auto;
  {% endblock %}
 
 {% block body %}
-{% load static %}
 <div class="container">
 
     <!--Slideshow starts here -->
@@ -73,7 +72,7 @@ bottom: auto;
        </div>
 
 
-        {% for i in product|slice:"1:"%}
+        {% for i in product|slice:"1:"%} 
         <div class="col-xs-3 col-sm-3 col-md-3">
           <div class="card" style="width: 18rem;">
             <img src='/media/{{i.image}}' class="card-img-top" alt="...">
