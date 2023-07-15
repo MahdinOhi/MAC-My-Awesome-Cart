@@ -45,7 +45,8 @@
     <!-- First Carousel -->
     {% for product, range, nSlides in allProds %}
     <h3 class="my-4">Flash Sale On {{ product.0.category }} - Recommended Items</h3>
-    <div id="demo{{ forloop.counter }}" class="carousel slide my-3" data-ride="carousel">
+    <div class="row">
+    <div id="demo{{ forloop.counter }}" class="col carousel slide my-3" data-ride="carousel">
         <ul class="carousel-indicators">
             <li data-target="#demo{{ forloop.counter }}" data-slide-to="0" class="active"></li>
             {% for i in range %}
@@ -81,6 +82,7 @@
         <a class="carousel-control-next" href="#demo{{ forloop.counter }}" data-slide="next">
             <span class="carousel-control-next-icon"></span>
         </a>
+    </div>
     </div>
     {% endfor %}
 
