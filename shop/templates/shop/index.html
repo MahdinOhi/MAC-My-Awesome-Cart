@@ -42,6 +42,7 @@
 
 {% block body %}
 <div class="container">
+
     <!-- First Carousel -->
     {% for product, range, nSlides in allProds %}
     <h3 class="my-4">Flash Sale On {{ product.0.category }} - Recommended Items</h3>
@@ -59,7 +60,7 @@
                 {% for i in product %}
                 <div class="col-xs-3 col-sm-3 col-md-3">
                     <div class="card" style="width: 18rem;">
-                        <img src='/media/{{ i.image }}' class="card-img-top" alt="...">
+                        <img src='/media/{{ i.image }}' class="card-img-top" alt="..." object-fit="cover">
                         <div class="card-body">
                             <h5 class="card-title">{{ i.product_name }}</h5>
                             <p class="card-text">{{ i.desc }}</p>
@@ -169,5 +170,9 @@ console.log(cart);
 localStorage.setItem('cart', JSON.stringify(cart));
 document.getElementById('cart').innerHTML = Object.keys(cart).length;
 });
+$('#popcart').popover();
+
+document.getElementById("popcart").setAttribute('data-content', '<h5>Products added to your Cart</h5>');
+
 </script>
 {% endblock %}
