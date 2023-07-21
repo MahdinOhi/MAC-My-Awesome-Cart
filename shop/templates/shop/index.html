@@ -1,4 +1,5 @@
 {% extends 'shop/basic.html' %}
+
 {% block css %}
 .col-md-3
 {
@@ -33,6 +34,7 @@ padding-left: 0,
 padding-right: 0;
 }
 {% endblock %}
+
 {% block body %}
 {% load static %}
 <div class="container">
@@ -74,12 +76,12 @@ padding-right: 0;
         </div>
 
         <!-- left and right controls for the slide -->
-        <a class="carousel-control-prev" href="#demo{{forloop.counter}}" data-slide="prev">
+        {% comment %} <a class="carousel-control-prev" href="#demo{{forloop.counter}}" data-slide="prev">
             <span class="carousel-control-prev-icon"></span>
         </a>
         <a class="carousel-control-next" href="#demo{{forloop.counter}}" data-slide="next">
             <span class="carousel-control-next-icon"></span>
-        </a>
+        </a> {% endcomment %}
     </div>
     {% endfor %}
 </div>
@@ -87,6 +89,14 @@ padding-right: 0;
 
 {% block js %}
 <script>
+
+    $(function() {
+        $('#demo1').carousel({
+            indicators: false,
+            controls: false
+        });
+    });
+
     // Add navigation buttons to all carousels
 $('.carousel').each(function() {
     var id = this.id;
